@@ -1,0 +1,29 @@
+{% extends 'base.html' %} 
+{% block title %}<title>Home Page</title> {%endblock%} 
+
+{% block content %}
+
+<div class="" style="display: grid; grid-template-columns: repeat(3,1fr); margin: 20px 50px">
+
+    
+
+
+  {% for meal in meals %}
+  <div class="card" style="margin:2px 5px">
+    <div class="card-body">
+        <img
+      src="{{meal.strMealThumb}}"
+      class="card-img-top"
+      alt="{{meal.strMeal}}"
+    />
+    <h6 class="card-text">Meal ID: {{meal.idMeal}}</h6>
+    <h5 class="card-title">Meal Name: {{meal.strMeal}}</h5>
+    <p class="card-text">
+      Food details. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea dolores iure molestias dolore, inventore quas aperiam sunt laudantium ipsam nulla.
+    </p>
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
+{% endblock%}
